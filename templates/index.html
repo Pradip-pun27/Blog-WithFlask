@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Arbitrary &amp; Thoughts — Index{% endblock %}
+{% block content %}
+    {% for post in posts %}
+        <article class="post-card">
+            <h2 class="post-card-title">
+                <a href="/post/{{ loop.index0 }}">{{ post.title }}</a>
+            </h2>
+            <div class="post-card-date">{{ post.date }}</div>
+            <p class="post-card-excerpt">{{ post.content[:200] }}{% if post.content|length > 200 %}...{% endif %}</p>
+        </article>
+    {% else %}
+        <div class="empty">
+            <h2>No posts yet</h2>
+            <p><a href="/new">Write the first entry</a></p>
+        </div>
+    {% endfor %}
+{% endblock %}

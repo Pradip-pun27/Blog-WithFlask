@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}{{ post.title }} — Arbitrary &amp; Thoughts{% endblock %}
+{% block content %}
+    <article class="post-full">
+        <h1>{{ post.title }}</h1>
+        <div class="post-date">{{ post.date }}</div>
+        <hr class="rule">
+        <div class="post-body">{{ post.content|nl2br|safe }}</div>
+    </article>
+    <a href="/" class="back-link">&larr; Back to index</a>
+{% endblock %}
